@@ -1,3 +1,10 @@
+// Q32. Print the following pattern:
+// 1
+// 22
+// 333
+// 4444
+// 55555
+
 package DAY8;
 
 public class Q32 {
