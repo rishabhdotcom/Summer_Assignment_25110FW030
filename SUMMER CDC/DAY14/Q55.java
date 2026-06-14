@@ -1,0 +1,28 @@
+package DAY14;
+import java.util.Scanner;
+public class Q55 {
+    public static void main(String[] args) {
+        Scanner scn = new Scanner(System.in);
+        System.out.print("Enter size of array: ");
+        int n = scn.nextInt();
+        int[] arr = new int[n];
+        System.out.println("Enter array elements:");
+        for (int i = 0; i < n; i++) {
+            arr[i] = scn.nextInt();
+        }
+        int largest = Integer.MIN_VALUE;
+        int secondLargest = Integer.MIN_VALUE;
+        for (int i = 0; i < n; i++) {
+            if (arr[i] > largest) { // if cureent elemnt is greater than largest
+                                    // secind largest =largest and 
+                                    // largest becomes the current element.
+                secondLargest = largest;
+                largest = arr[i];
+            } else if (arr[i] > secondLargest && arr[i] != largest) {
+                secondLargest = arr[i];
+            }
+        }
+        System.out.println("Second Largest Element = " + secondLargest); // show seconf largest
+        scn.close();
+    }
+}

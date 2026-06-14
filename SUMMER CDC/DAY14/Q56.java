@@ -1,0 +1,35 @@
+// Q56: Write a program to Find duplicates in array. 
+
+package DAY14;
+import java.util.Scanner;
+public class Q56 {
+    public static void main(String[] args) {
+        Scanner scn = new Scanner(System.in);
+        System.out.print("Enter size of the array: ");
+        int n = scn.nextInt();
+        int[] arr = new int[n];
+        System.out.println("Enter array elements:");
+        for (int i = 0; i < n; i++) {
+        arr[i] = scn.nextInt();
+        }
+        System.out.println("Duplicate elements are:");
+        for (int i = 0; i < n; i++) {
+            boolean isDuplicate = false;
+            for (int k = 0; k < i; k++) {
+                if (arr[i] == arr[k]) {
+                isDuplicate = true;
+                break;
+                }
+            }
+            if (isDuplicate)
+                continue;
+            for (int j = i + 1; j < n; j++) {
+                if (arr[i] == arr[j]) {
+                System.out.println(arr[i]);
+                break;
+                }
+            }
+        }
+        scn.close();
+    }
+}
